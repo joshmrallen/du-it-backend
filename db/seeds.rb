@@ -3,15 +3,15 @@
 
 # seed the default books for the collections
 
-literature = Genre.find_by(name: "Literature")
+# literature = Genre.find_by(name: "Literature")
 
-xiyouji = Book.create(title: "西游记", genre_id: literature.id, author_id: 5, epub_url: "https://du-it-dev.s3.amazonaws.com/xiyouji.epub")
+# xiyouji = Book.create(title: "西游记", genre_id: literature.id, author_id: 5, epub_url: "https://du-it-dev.s3.amazonaws.com/xiyouji.epub")
 
-cao = Author.create(first_name: "雪芹", last_name: "曹")
-hongloumeng = Book.create(title: "红楼梦", genre_id: literature.id, author_id: cao.id, epub_url: "https://du-it-dev.s3.amazonaws.com/hongloumeng.epub")
+# cao = Author.create(first_name: "雪芹", last_name: "曹")
+# hongloumeng = Book.create(title: "红楼梦", genre_id: literature.id, author_id: cao.id, epub_url: "https://du-it-dev.s3.amazonaws.com/hongloumeng.epub")
 
-luo = Author.create(first_name: "贯中", last_name: "罗")
-sanguoyanyi = Book.create(title: "三国演义", genre_id: literature.id, author_id: luo.id, epub_url: "https://du-it-dev.s3.amazonaws.com/sanguoyanyi.epub")
+# luo = Author.create(first_name: "贯中", last_name: "罗")
+# sanguoyanyi = Book.create(title: "三国演义", genre_id: literature.id, author_id: luo.id, epub_url: "https://du-it-dev.s3.amazonaws.com/sanguoyanyi.epub")
 
 #haven't seeded yet
 
@@ -56,10 +56,9 @@ sanguoyanyi = Book.create(title: "三国演义", genre_id: literature.id, author
 
 # binding.pry
 
-puts "complete"
+# puts "complete"
 
 
-# require 'google/cloud/translate'
 
 
 
@@ -68,6 +67,8 @@ puts "complete"
 # text = '你好'
 
 # language_code = 'en'
+
+# require 'google/cloud/translate'
 
 # translate = Google::Cloud::Translate.translation_v2_service project_id: project_id
 # translation = translate.translate text, to: language_code

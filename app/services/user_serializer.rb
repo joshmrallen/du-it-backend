@@ -17,6 +17,9 @@ class UserSerializer
                             only: [:first_name, :last_name]
                         }
                     }
+                },
+                words: {
+                    except: [:created_at, :updated_at]
                 }
             }
         } 

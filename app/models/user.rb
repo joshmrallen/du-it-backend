@@ -19,4 +19,16 @@ class User < ApplicationRecord
         Collection.create(user_id: self.id, book_id: sanguoyanyi.id)
     end
 
+    def add_new_word(word)
+        found = Word.find_by(word: word)
+        if(found)
+            WordList.create(user_id: self.id, word_id: found.id)
+        else
+            newWord = Word.create(word: word)
+            newWord.define
+            newWord.get_pinyin
+            WordList.create(user_id: self.id, word_id: newWord.id)
+        end
+    end
+
 end

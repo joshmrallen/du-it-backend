@@ -11,6 +11,13 @@ class UsersController < ApplicationController
         render json: UserSerializer.new(user).to_serialized_json
     end
 
+    def add_word
+        user = User.find(params[:id])
+        word = params[:word]
+        user.add_new_word(word)
+        render json: UserSerializer.new(user).to_serialized_json
+    end
+
     private
 
     def user_params

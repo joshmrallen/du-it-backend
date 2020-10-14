@@ -49,3 +49,5 @@ gem 'rest-client'
 gem 'google-cloud-translate'
 
 gem 'aws-sdk-s3'
+
+gem 'ruby-pinyin'
