@@ -26,6 +26,7 @@ class Book < ApplicationRecord
 
     def add_epub_url
         if self.epub.attachment
+            self.epub.key << ".epub"
             self.epub_url = self.epub.service_url.split("?").first
         end
     end

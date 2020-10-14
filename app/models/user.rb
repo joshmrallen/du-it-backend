@@ -9,5 +9,14 @@ class User < ApplicationRecord
     has_many :collections
     has_many :books
 
+    def initialize_default_collection
+        xiyouji = Book.find_by(title: "西游记")
+        hongloumeng = Book.find_by(title: "红楼梦")
+        sanguoyanyi = Book.find_by(title: "三国演义")
+
+        Collection.create(user_id: self.id, book_id: xiyouji.id)
+        Collection.create(user_id: self.id, book_id: hongloumeng.id)
+        Collection.create(user_id: self.id, book_id: sanguoyanyi.id)
+    end
 
 end
