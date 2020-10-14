@@ -8,7 +8,7 @@ literature = Genre.find_by(name: "Literature")
 xiyouji = Book.create(title: "西游记", genre_id: literature.id, author_id: 5, epub_url: "https://du-it-dev.s3.amazonaws.com/xiyouji.epub")
 
 cao = Author.create(first_name: "雪芹", last_name: "曹")
-hongloumeng = Book.create(title: "红楼梦"， genre_id: literature.id, author_id: cao.id, epub_url: "https://du-it-dev.s3.amazonaws.com/hongloumeng.epub")
+hongloumeng = Book.create(title: "红楼梦", genre_id: literature.id, author_id: cao.id, epub_url: "https://du-it-dev.s3.amazonaws.com/hongloumeng.epub")
 
 luo = Author.create(first_name: "贯中", last_name: "罗")
 sanguoyanyi = Book.create(title: "三国演义", genre_id: literature.id, author_id: luo.id, epub_url: "https://du-it-dev.s3.amazonaws.com/sanguoyanyi.epub")

@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
 
     has_many :collections
-    has_many :users
+    has_many :users, through: :collections
 
     #Book belongs to Genre, but not as a join for genre and author
     belongs_to :genre

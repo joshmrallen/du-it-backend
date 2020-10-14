@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
 
+    def show
+        user = User.find(params[:id])
+        render json: UserSerializer.new(user).to_serialized_json
+    end
+
     def create
         user = User.create(user_params)
         user.initialize_default_collection
-        render :json #TODO: make user_serializer that includes books for response
+        render json: UserSerializer.new(user).to_serialized_json
     end
 
     private

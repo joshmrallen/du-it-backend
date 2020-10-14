@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_many :words, through: :word_lists
 
     has_many :collections
-    has_many :books
+    has_many :books, through: :collections
 
     def initialize_default_collection
         xiyouji = Book.find_by(title: "西游记")
