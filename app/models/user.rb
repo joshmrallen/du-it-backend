@@ -22,7 +22,9 @@ class User < ApplicationRecord
     def add_new_word(word)
         found = Word.find_by(word: word)
         if(found)
-            WordList.create(user_id: self.id, word_id: found.id)
+            if(!self.words.include?(found))
+                WordList.create(user_id: self.id, word_id: found.id)
+            end
         else
             newWord = Word.create(word: word)
             newWord.define
