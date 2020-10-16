@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   post '/add_word', to: 'users#add_word'
+  delete '/remove_word', to: 'word_lists#destroy'
 
   resources :books, only: [:create, :index, :show]
   resources :word_lists
