@@ -1,2 +1,2 @@
-# du-it-backend
+# Du it!
 
