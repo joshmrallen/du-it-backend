@@ -47,6 +47,7 @@ gem 'dotenv'
 gem 'rest-client'
 
 gem 'google-cloud-translate'
+gem 'google-cloud-text_to_speech'
 
 gem 'aws-sdk-s3'
 

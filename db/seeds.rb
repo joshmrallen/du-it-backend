@@ -16,8 +16,34 @@
 #haven't seeded yet
 
 
+#Text to Speech Language codes:
+#English: "en-US"
+#Mandarin: "cmn-CN", female: "cmn-CN-Standard-A", male: "cmn-CN-Standard-A"
 
+client = Google::Cloud::TextToSpeech.text_to_speech
 
+#Taking out punctuation since last time it didn't play the 'world' part
+synthesis_input = { text: "你好世界"}
+
+voice = {
+        language_code: "cmn-CN",
+        name: "cmn-CN-Standard-A"
+        # ssml_gender: "FEMALE"
+}
+
+audio_config = { audio_encoding: "MP3" }
+
+response = client.synthesize_speech(
+        input: synthesis_input,
+        voice: voice,
+        audio_config: audio_config
+)
+
+File.open "output.mp3", "wb" do |file|
+        file.write response.audio_content
+end
+
+puts "Audio content written to file 'output.mp3'"
 
 
 
