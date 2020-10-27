@@ -1,5 +1,14 @@
 # User.delete_all
 # Book.delete_all
+Word.delete_all
+
+#seed new words
+user = User.all.first
+word = "好吃"
+user.add_new_word(word)
+puts "New word has been added: #{user.words[0]}"
+puts "Female Voice URL: #{user.words[0].female_voice_url}"
+puts "Male Voice URL: #{user.words[0].male_voice_url}"
 
 # seed the default books for the collections
 
@@ -20,30 +29,30 @@
 #English: "en-US"
 #Mandarin: "cmn-CN", female: "cmn-CN-Standard-A", male: "cmn-CN-Standard-A"
 
-client = Google::Cloud::TextToSpeech.text_to_speech
+# client = Google::Cloud::TextToSpeech.text_to_speech
 
 #Taking out punctuation since last time it didn't play the 'world' part
-synthesis_input = { text: "你好世界"}
+# synthesis_input = { text: "你好世界"}
 
-voice = {
-        language_code: "cmn-CN",
-        name: "cmn-CN-Standard-A"
-        # ssml_gender: "FEMALE"
-}
+# voice = {
+#         language_code: "cmn-CN",
+#         name: "cmn-CN-Standard-A"
+#         # ssml_gender: "FEMALE"
+# }
 
-audio_config = { audio_encoding: "MP3" }
+# audio_config = { audio_encoding: "MP3" }
 
-response = client.synthesize_speech(
-        input: synthesis_input,
-        voice: voice,
-        audio_config: audio_config
-)
+# response = client.synthesize_speech(
+#         input: synthesis_input,
+#         voice: voice,
+#         audio_config: audio_config
+# )
 
-File.open "output.mp3", "wb" do |file|
-        file.write response.audio_content
-end
+# File.open "output.mp3", "wb" do |file|
+#         file.write response.audio_content
+# end
 
-puts "Audio content written to file 'output.mp3'"
+# puts "Audio content written to file 'output.mp3'"
 
 
 
