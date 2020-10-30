@@ -29,7 +29,7 @@ class User < ApplicationRecord
             newWord = Word.create(word: word)
             newWord.define
             newWord.get_pinyin
-            newWord.get_voices
+            # newWord.get_voices
             WordList.create(user_id: self.id, word_id: newWord.id)
         end
     end
