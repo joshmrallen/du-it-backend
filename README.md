@@ -1,5 +1,5 @@
 # Du it!
-![gif](./src/images/du-it.gif?raw=true)
+![gif](./du-it.gif?raw=true)
 Click [here](https://youtu.be/VHXAkeIC1_0) for full demo.
 
 ## Description
