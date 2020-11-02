@@ -21,6 +21,44 @@ class Word < ApplicationRecord
         self.save!
     end
 
+    def get_female_voice
+        client = Google::Cloud::TextToSpeech.text_to_speech
+        #input for audio response from Google Cloud
+        synthesis_input = { text: self.word}
+        female_voice = {
+            language_code: "cmn-CN",
+            name: "cmn-CN-Standard-A"
+        }
+        audio_config = { audio_encoding: "MP3" }
+        #make the request and receive the response:
+        female_response = client.synthesize_speech(
+            input: synthesis_input,
+            voice: female_voice,
+            audio_config: audio_config
+        )
+        #have to return the entire response, not just audio_content
+        female_response
+    end
+
+    def get_male_voice
+        client = Google::Cloud::TextToSpeech.text_to_speech
+        #input for audio response from Google Cloud
+        synthesis_input = { text: self.word }
+        male_voice = {
+            language_code: "cmn-CN",
+            name: "cmn-CN-Standard-C"
+        }
+        audio_config = { audio_encoding: "MP3" }
+        #make the request and receive the response:
+        male_response = client.synthesize_speech(
+            input: synthesis_input,
+            voice: male_voice,
+            audio_config: audio_config
+        )
+        #have to return the entire response, not just the audio_content property
+        male_response
+    end
+
     # def get_voices
     #     #functionality kept to one method to limit multiple "clients"
     #     client = Google::Cloud::TextToSpeech.text_to_speech
